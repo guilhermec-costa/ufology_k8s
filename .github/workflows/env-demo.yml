@@ -1,0 +1,16 @@
+name: Environment Demo
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  env-demo:
+    runs-on: ubuntu-latest
+    env:
+      DEPLOY_ENV: staging
+    steps:
+      - name: Exibir ambiente
+        run: echo "DEPLOY_ENV=${DEPLOY_ENV}"
